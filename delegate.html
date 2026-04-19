@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Terminal | Recessus Concessus 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700&family=Gideon+Roman&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="terminal-body">
+
+    <nav class="terminal-nav">
+        <div class="terminal-id">
+            <span class="gold-label">UPLINK STATUS:</span> ACTIVE // 
+            <span id="user-display" style="letter-spacing: 2px;">SECURE_TERMINAL</span>
+        </div>
+        <button id="logout-btn" class="gold-border-btn" onclick="logoutUser()">TERMINATE SESSION</button>
+    </nav>
+
+    <main class="terminal-container centered-content">
+        
+        <header class="terminal-header">
+            <p class="welcome-text reveal active">MISSION CONTROL CENTER</p>
+            <h1 class="gigantic-title reveal active" style="font-size: clamp(3rem, 10vw, 6rem);">DELEGATE PORTAL</h1>
+            <div class="accent-line reveal active"></div>
+        </header>
+
+        <div class="terminal-grid">
+            
+            <div class="detail-card reveal active">
+                <h2 class="gold-heading">MISSION ASSETS</h2>
+                <div class="assets-list">
+                    <p>Access the definitive briefing for the 4th edition of Recessus Consensus.</p>
+                    <a href="assets/Crescendo 2026 Recessus Consensus Study Guide.pdf" target="_blank" class="gold-action-btn" style="padding: 1rem 2rem; font-size: 0.8rem; margin-top: 1rem;">
+                        DOWNLOAD STUDY GUIDE
+                    </a>
+                </div>
+            </div>
+
+            <div class="detail-card reveal active">
+                <h2 class="gold-heading">CRISIS BRIEFING</h2>
+                <div class="video-container">
+                    <video width="100%" controls class="styled-video" poster="assets/video-thumbnail.jpg">
+                        <source src="assets/Crisis_Briefing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="welcome-text" style="font-size: 0.7rem; margin-top: 1.5rem; opacity: 0.6;">
+                    ENCRYPTED TRANSMISSION // 2026 GLOBAL ORDER
+                </p>
+            </div>
+
+        </div>
+
+        <footer class="footer reveal active" style="margin-top: 5rem;">
+            <p>Made with dedication & efforts,</p>
+            <span class="team-cursive">Team Recessus Concessus</span>
+        </footer>
+
+    </main>
+
+    <script src="js/scroll.js"></script>
+    <script type="module">
+
+        window.logoutUser = function() {
+            localStorage.removeItem('recessus_user');
+            window.location.href = 'index.html';
+        }
+    
+        const user = localStorage.getItem('recessus_user');
+        if (user) document.getElementById('user-display').textContent = user.toUpperCase();
+    </script>
+</body>
+</html>

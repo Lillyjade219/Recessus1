@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recessus Concessus | Command Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">COMMAND OVERRIDE // ADMIN</div>
+        <a href="index.html" style="color: red; text-decoration: none;">LOCK CONSOLE</a>
+    </nav>
+
+    <main>
+        <div class="glass-panel" id="admin-panel" style="display:none; max-width: 600px;">
+            <h2>ASSET DEPLOYMENT</h2>
+            
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                <label>UPLOAD STUDY GUIDE (PDF)</label>
+                <input type="file" id="guide-file" accept="application/pdf">
+                <button id="upload-guide-btn">DEPLOY TO DELEGATES</button>
+            </div>
+
+            <div>
+                <label>UPLOAD CRISIS BRIEFING (MP4)</label>
+                <input type="file" id="video-file" accept="video/mp4">
+                <button id="upload-video-btn">TRANSMIT VIDEO</button>
+            </div>
+
+            <p id="status-msg" style="margin-top: 20px; text-align: center; color: var(--accent);"></p>
+        </div>
+        <div class="glass-panel" id="admin-panel" style="display:none;">
+    <h2 class="gold-heading">COMMAND OVERRIDE</h2>
+    
+    <div class="admin-section">
+        <h3>DELEGATE STATUS TRACKER</h3>
+        <table id="delegate-table">
+            <thead>
+                <tr>
+                    <th>Delegate</th>
+                    <th>Attendance</th>
+                    <th>Video Viewed</th>
+                </tr>
+            </thead>
+            <tbody id="attendance-body"></tbody>
+        </table>
+    </div>
+
+    <div class="admin-section">
+        <h3>INITIATE RESOLUTION VOTE</h3>
+        <input type="text" id="res-title-input" placeholder="Resolution Title">
+        <input type="number" id="vote-time" placeholder="Time Limit (Seconds)">
+        <button id="start-vote-btn" class="gold-action-btn">INITIATE VOTE FOR ALL</button>
+    </div>
+</div>
+<div class="glass-panel reveal active" style="margin-top: 2rem; max-width: 900px;">
+    <h2 class="gold-heading">LIVE ATTENDANCE: COMMITTEE ROOM</h2>
+    <div id="attendance-list" class="attendance-grid">
+        <p style="opacity: 0.5;">Awaiting secure uplinks from delegates...</p>
+    </div>
+</div>
+</div>
+    </main>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
